@@ -22,7 +22,13 @@ Route::get('/services', function () {
 });
 
 
-// SERVICES
+// About
 Route::get('/about', function () {
     return view('about');
 });
+
+// Contact
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::post('/contact', [App\Http\Controllers\Contact\ContactController::class, 'sendMessage'])->name('contact.send');
